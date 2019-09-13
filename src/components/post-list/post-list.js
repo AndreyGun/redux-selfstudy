@@ -61,4 +61,11 @@ const mapDispatchToProps = (dispatch) => {
         fetchPosts: () => dispatch(fetchPosts(dispatch))
     }
 }
+
+
+// в функция connect можно передать сразу экшны и этот код:
+// return bindActionCreators(actions, dispatch);
+// выполнится автоматически внутри функции
+// export default connect(mapStateToProps, actions)(Counter);
+
 export default connect(mapStateToProps, mapDispatchToProps)(PostListContainer);
