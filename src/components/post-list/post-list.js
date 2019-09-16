@@ -27,9 +27,10 @@ class PostListContainer extends Component {
     }
     render() {
         const {posts, loading, error} = this.props;
-        if ( loading ) return <div>...Loading</div>
 
-        if ( error ) return <div>...Error</div>
+        if ( loading ) return <div>...Loading</div>;
+
+        if ( error ) return <div>...Error</div>;
 
         return(
             <PostList posts={posts} />
