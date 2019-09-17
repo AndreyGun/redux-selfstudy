@@ -1,3 +1,9 @@
+import {
+    FETCH_POSTS_REQUEST,
+    FETCH_POSTS_SUCCESS,
+    FETCH_POSTS_FAILURE
+} from '../action-types/'
+
 
 const initialState = {
     posts: [],
@@ -5,18 +11,18 @@ const initialState = {
     error: null
 };
 
-const updatePosts = (state = initialState, { type, payload }) => {
+const postsReducer = (state = initialState, { type, payload }) => {
     console.log(type);
     switch (type) {
-        case 'FETCH_POSTS_REQUEST':
+        case FETCH_POSTS_REQUEST:
             return state;
-        case 'FETCH_POSTS_SUCCESS':
+        case FETCH_POSTS_SUCCESS:
             return {
                 posts: payload,
                 loading: false,
                 error: null
             };
-        case 'FETCH_POSTS_FAILURE':
+        case FETCH_POSTS_FAILURE:
             return {
                 posts: [],
                 loading: false,
@@ -27,4 +33,4 @@ const updatePosts = (state = initialState, { type, payload }) => {
     }
 }
 
-export default updatePosts;
+export default postsReducer;

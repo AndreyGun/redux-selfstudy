@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchPosts } from '../../store/actions/action';
+import { fetchPosts } from '../../redux/actions/';
 
 import Post from '../post';
 import './post-list.css';
@@ -46,27 +46,8 @@ const mapStateToProps = ({ posts, loading, error }) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-
-    //   1
-    // return {
-    //     postRequest: (data) => {
-    //         dispatch({
-    //             type: 'FETCH_POST_REQUEST',
-    //             payload: data
-    //         });
-    //     }
-    // }
-
-    return {
-        fetchPosts: () => dispatch(fetchPosts(dispatch))
-    }
+const mapDispatchToProps = {
+    fetchPosts
 }
-
-
-// в функция connect можно передать сразу экшны и этот код:
-// return bindActionCreators(actions, dispatch);
-// выполнится автоматически внутри функции
-// export default connect(mapStateToProps, actions)(Counter);
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostListContainer);
