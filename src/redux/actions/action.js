@@ -4,9 +4,6 @@ import {
     FETCH_POSTS_FAILURE
 } from '../actions'
 
-console.log("1");
-console.log(FETCH_POSTS_REQUEST);
-
 const postsRequest = () => ({type: FETCH_POSTS_REQUEST});
 const postsLoaded = (posts) => ({
     type: FETCH_POSTS_SUCCESS,
